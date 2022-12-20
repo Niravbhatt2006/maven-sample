@@ -1,7 +1,7 @@
 pipeline {
    agent any
    tools{
-       maven 'M2_HOME'
+       maven 'Maven'
        }
 
    stages {
@@ -20,12 +20,12 @@ pipeline {
              sh 'mvn clean package'
                }
             }
-      stage('Sonar Checks') {
-	 steps{
-	    withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'SonarCloud') {
-    	    sh 'mvn clean package sonar:sonar'
-     		}
-  	 }
+//      stage('Sonar Checks') {
+//	 steps{
+//	    withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'SonarCloud') {
+//  	    sh 'mvn clean package sonar:sonar'
+ //    		}
+  //	 }
       } 
    }         
 }
