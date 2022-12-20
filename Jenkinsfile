@@ -1,4 +1,4 @@
-pipeline {
+https://www.catalog.update.microsoft.com/Search.aspx?q=windows%2011%202022pipeline {
    agent any
    tools{
        maven 'Maven'
@@ -20,12 +20,12 @@ pipeline {
              sh 'mvn clean package'
                }
             }
-//      stage('Sonar Checks') {
-//	 steps{
-//	    withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'SonarCloud') {
-//  	    sh 'mvn clean package sonar:sonar'
- //    		}
- //	 }
-//      } 
+     stage('Sonar Checks') {
+	 steps{
+	    withSonarQubeEnv(installationName: 'Analysis', credentialsId: 'Sonaranalysis') {
+  	    sh 'mvn clean package sonar:sonar'
+     		}
+ 	 }
+      } 
    }         
 }
