@@ -25,7 +25,7 @@ pipeline {
 //	    withSonarQubeEnv(installationName: 'Sonarscanner', credentialsId: 'SonarCloud') {
 //  	    sh 'mvn clean package sonar:sonar'
  //    		}
-  //	 }
-      } 
+ //	 }
+//      } 
    }         
 }
